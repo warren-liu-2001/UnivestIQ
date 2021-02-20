@@ -14,6 +14,10 @@ class Recommender:
     name: str
     userdata: AccountManager
 
+    def __init__(self, name, userdata):
+        self.name = name
+        self.userdata = userdata
+
 
 
 
