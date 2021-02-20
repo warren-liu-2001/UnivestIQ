@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="697b007e-a3cb-4d7a-82b7-a274eca7e94d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/backend/src/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/UnivestIQ.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/UnivestIQ.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/account.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/account.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/findata.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/findata.py" afterDir="false" />
     </list>
@@ -9,6 +12,13 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -49,9 +59,9 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="496" y="270" key="com.intellij.ide.util.TipDialog" timestamp="1613840029690">
+    <state x="496" y="270" key="com.intellij.ide.util.TipDialog" timestamp="1613852131195">
       <screen x="0" y="23" width="1440" height="828" />
     </state>
-    <state x="496" y="270" key="com.intellij.ide.util.TipDialog/0.23.1440.828@0.23.1440.828" timestamp="1613840029690" />
+    <state x="496" y="270" key="com.intellij.ide.util.TipDialog/0.23.1440.828@0.23.1440.828" timestamp="1613852131195" />
   </component>
 </project>

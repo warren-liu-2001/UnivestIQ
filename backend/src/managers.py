@@ -1,0 +1,87 @@
+import math
+import pandas as pd
+from typing import List, Tuple, Dict
+from findata import Security, Transaction
+from account import Account
+import recommender
+import uuid
+from error import NotFoundError
+
+class AccountManager:
+
+    accounts: List[Account]
+
+    def __init__(self):
+        self.accounts = []
+
+    def add_account(self, accounte: Account):
+        self.accounts.append(accounte)
+
+    def account_create(self, name: str, email: str, password: str):
+        ident = uuid.uuid1().int
+        acc = Account(ident, email, password, name)
+        self.add_account(acc)
+
+    def find_account(self, userid) -> Account:
+        for account in self.accounts:
+            if account.userid == userid:
+                return account
+        else:
+            raise NotFoundError
+
+    def set_password(self, uuide, pwd) -> bool:
+        try:
+            acc = self.find_account(uuide)
+            acc.setpwd(str(pwd))
+            return True
+        except NotFoundError:
+            return False
+        except:
+            return False
+
+    def authent_pwd(self, uuide, otherpwd, tries) -> bool:
+        """
+        IMPORTANT:
+        the tries parameter takes an int and increments it. We have max of 5 tries until the logger is locked
+        """
+        try:
+            acc = self.find_account(uuide)
+            pwd = acc.getpwd
+            if str(pwd) == str(otherpwd):
+                return True
+            else:
+                tries += 1
+                return False
+        except NotFoundError:
+            return False
+        except:
+            tries += 1
+            return False
+
+    def set_name(self, uuide, name):
+        try:
+            acc = self.find_account(uuide)
+            acc.setname(str(name))
+            return True
+        except NotFoundError:
+            return False
+        except:
+            return False
+
+    def set_email(self, uuide, email):
+        try:
+            acc = self.find_account(uuide)
+            acc.setemail(str(email))
+            return True
+        except NotFoundError:
+            return False
+        except:
+            return False
+
+    def get_uuid_from_email(self, email) -> int:
+        for account in self.accounts:
+            if account.email == email:
+                return account.userid
+        else:
+            raise NotFoundError
+

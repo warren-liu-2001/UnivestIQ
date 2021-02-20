@@ -31,5 +31,5 @@ class Transaction:
     def __str__(self):
         return "Date: " + self.dateoccur.__str__() + " Type: " + \
                self.typeoftransact + " Description: " + self.explanation + \
-               " Amount: " + str(self.buyprice)
+               " Amount: " + str(self.amount)
 

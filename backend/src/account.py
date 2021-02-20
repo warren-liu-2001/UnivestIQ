@@ -1,11 +1,13 @@
 import math
 import pandas as pd
 from typing import List, Tuple, Dict
+
 from findata import Security, Transaction
 
 class Account:
-    
+
     userid: int # UserID
+    name: str #name
     email: str #email
     password: str #password
 
@@ -13,33 +15,36 @@ class Account:
     transactions: List[Transaction] #list of recent transactions: past 30 days
     spending_score: int # Unused spending score: may be used for ML
 
+    goldstat: bool #if this account is a gold status member
 
-    def __init__(self, userid, email, password):
+
+    def __init__(self, userid, email, password, name):
         self.userid = userid
         self.email = email
         self.password = password
+        self.name = name
 
     def setuserid(self, newid) -> None:
         self.userid = newid
-    
+
     def getuserid(self) -> str:
         return self.userid
 
     def setemail(self, newem) -> None:
         self.email = newem
-    
+
     def getemail(self) -> str:
         return self.email
 
     def setpwd(self, newpwd) -> None:
         self.password= newpwd
-    
+
     def getpwd(self) -> str:
         return self.password
 
     def addsecurity(self, securityadd) -> None:
         self.portfolio.append(securityadd)
-    
+
     def removesecurity(self, security_rm) -> bool:
         try:
             self.portfolio.remove(security_rm)
@@ -48,7 +53,7 @@ class Account:
             return False
         except:
             return False
-    
+
     def get_portfolio(self):
         listreturn = []
         for transaction in self.portfolio:
@@ -73,5 +78,5 @@ class Account:
             listreturn.append(transaction)
         return listreturn
 
-    
+
 
