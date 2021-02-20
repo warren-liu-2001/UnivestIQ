@@ -1,11 +1,14 @@
 import math
-import pandas as pd
-from typing import List, Tuple, Dict
-from findata import Security, Transaction
-from account import Account
-import recommender
 import uuid
-from error import NotFoundError
+from typing import Dict, List, Tuple
+
+import pandas as pd
+
+import recommender
+from account import Account
+from exceptionse import NotFoundError
+from findata import Security, Transaction
+
 
 class AccountManager:
 
@@ -27,7 +30,7 @@ class AccountManager:
             if account.userid == userid:
                 return account
         else:
-            raise NotFoundError
+            raise NotFoundError("Find account", "ERROR: Account Not found")
 
     def set_password(self, uuide, pwd) -> bool:
         try:
@@ -83,5 +86,23 @@ class AccountManager:
             if account.email == email:
                 return account.userid
         else:
-            raise NotFoundError
+            raise NotFoundError("Find UUID", "ERROR: UUID Not found from email")
+
+    def add_investment(self, email, investment: Security) -> bool:
+        try:
+            uuide = self.get_uuid_from_email(email)
+            acc = self.find_account(uuide)
+            acc.add_investment(investment)
+            return True
+        except NotFoundError:
+            return False
+        except:
+            return False
+
+    def find_investment(self, investmentid) -> Security:
+        for account in self.accounts:
+            for investment in account.get_portfolio():
+                if investment.id == investmentid:
+                    return investment
+        raise NotFoundError("Find Investment", "ERROR: Investment cannot be found")
 
