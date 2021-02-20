@@ -1,6 +1,7 @@
 import math
 import uuid
 from typing import Dict, List, Tuple
+from datetime import date, datetime
 
 import pandas as pd
 
@@ -92,7 +93,18 @@ class AccountManager:
         try:
             uuide = self.get_uuid_from_email(email)
             acc = self.find_account(uuide)
-            acc.add_investment(investment)
+            acc.addsecurity(investment)
+            return True
+        except NotFoundError:
+            return False
+        except:
+            return False
+
+    def remove_investment(self, email, investment: Security) -> bool:
+        try:
+            uuide = self.get_uuid_from_email(email)
+            acc = self.find_account(uuide)
+            acc.removesecurity(investment)
             return True
         except NotFoundError:
             return False
@@ -105,4 +117,48 @@ class AccountManager:
                 if investment.id == investmentid:
                     return investment
         raise NotFoundError("Find Investment", "ERROR: Investment cannot be found")
+
+    def remove_transaction(self, email, investment: Transaction) -> bool:
+        try:
+            uuide = self.get_uuid_from_email(email)
+            acc = self.find_account(uuide)
+            acc.removetransaction(investment)
+            return True
+        except NotFoundError:
+            return False
+        except:
+            return False
+
+    def add_transaction(self, email, investment: Transaction) -> bool:
+        try:
+            uuide = self.get_uuid_from_email(email)
+            acc = self.find_account(uuide)
+            acc.addtransaction(investment)
+            return True
+        except NotFoundError:
+            return False
+        except:
+            return False
+
+    def new_transaction(self, typeoftrs, explanation, amount) -> Transaction:
+        datetimenow = datetime.now()
+        uuuuid = uuid.uuid1().int
+        return Transaction(uuuuid, typeoftrs, explanation, datetimenow, amount)
+
+
+    def find_transaction(self, email, transactionID: int) -> Transaction:
+        try:
+            uuide = self.get_uuid_from_email(email)
+            acc = self.find_account(uuide)
+            transactions = acc.get_transactions
+            for txn in transactions:
+                if txn.ide == transactionID:
+                    return txn
+            else:
+                return self.new_transaction("INVALID", "TXN NOT FOUND IN USER", 0)
+        except NotFoundError:
+            return self.new_transaction("INVALID", "NAN VALUE IN TXN", 0)
+        except:
+            return self.new_transaction("INVALID", "NAN VALUE IN TXN", 0)
+
 

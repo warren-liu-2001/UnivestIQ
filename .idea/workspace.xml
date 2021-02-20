@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="697b007e-a3cb-4d7a-82b7-a274eca7e94d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/aws.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/error.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/findata.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/findata.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/managers.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/managers.py" afterDir="false" />
     </list>
@@ -56,7 +55,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1613840025569</updated>
-      <workItem from="1613853772195" duration="319000" />
+      <workItem from="1613853772195" duration="664000" />
+      <workItem from="1613856389046" duration="36000" />
     </task>
     <servers />
   </component>
