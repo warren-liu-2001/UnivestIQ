@@ -48,7 +48,12 @@ class Account:
             return False
         except:
             return False
-        
+    
+    def get_portfolio(self):
+        listreturn = []
+        for transaction in self.portfolio:
+            listreturn.append(transaction)
+        return listreturn
 
     def addtransaction(self, transacc) -> None:
         self.transactions.append(transacc)
@@ -61,6 +66,12 @@ class Account:
             return False
         except:
             return False
+
+    def get_transactions(self):
+        listreturn = []
+        for transaction in self.transactions:
+            listreturn.append(transaction)
+        return listreturn
 
     
 
