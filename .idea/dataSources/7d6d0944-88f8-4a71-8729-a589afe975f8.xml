@@ -6,17 +6,81 @@
       <Dbms>COCKROACH</Dbms>
     </root>
     <database id="2" parent="1" name="defaultdb"/>
-    <database id="3" parent="1" name="postgres"/>
-    <database id="4" parent="1" name="system"/>
-    <database id="5" parent="1" name="mature-otter-855.defaultdb">
+    <database id="3" parent="1" name="mature-otter-855.defaultdb">
       <Current>1</Current>
     </database>
-    <schema id="6" parent="5" name="crdb_internal"/>
-    <schema id="7" parent="5" name="information_schema"/>
-    <schema id="8" parent="5" name="pg_catalog"/>
-    <schema id="9" parent="5" name="pg_extension"/>
-    <schema id="10" parent="5" name="public">
+    <database id="4" parent="1" name="postgres"/>
+    <database id="5" parent="1" name="system"/>
+    <database id="6" parent="1" name="users"/>
+    <schema id="7" parent="3" name="crdb_internal"/>
+    <schema id="8" parent="3" name="information_schema"/>
+    <schema id="9" parent="3" name="pg_catalog"/>
+    <schema id="10" parent="3" name="pg_extension"/>
+    <schema id="11" parent="3" name="public">
       <Current>1</Current>
     </schema>
+    <schema id="12" parent="3" name="warrenschema"/>
+    <table id="13" parent="12" name="userinfo"/>
+    <table id="14" parent="12" name="users"/>
+    <column id="15" parent="13" name="userid">
+      <Position>1</Position>
+      <DataType>int8|-5s</DataType>
+    </column>
+    <column id="16" parent="13" name="name">
+      <Position>2</Position>
+      <DataType>text|12s</DataType>
+    </column>
+    <column id="17" parent="13" name="email">
+      <Position>3</Position>
+      <DataType>text|12s</DataType>
+    </column>
+    <column id="18" parent="13" name="password">
+      <Position>4</Position>
+      <DataType>text|12s</DataType>
+    </column>
+    <column id="19" parent="13" name="rowid">
+      <Position>5</Position>
+      <DataType>int8|-5s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>unique_rowid()</DefaultExpression>
+    </column>
+    <index id="20" parent="13" name="primary">
+      <ColNames>rowid</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="21" parent="13" name="primary">
+      <ColNames>rowid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="22" parent="14" name="userid">
+      <Position>1</Position>
+      <DataType>int8|-5s</DataType>
+    </column>
+    <column id="23" parent="14" name="first_name">
+      <Position>2</Position>
+      <DataType>text|12s</DataType>
+    </column>
+    <column id="24" parent="14" name="last_name">
+      <Position>3</Position>
+      <DataType>text|12s</DataType>
+    </column>
+    <column id="25" parent="14" name="email">
+      <Position>4</Position>
+      <DataType>text|12s</DataType>
+    </column>
+    <column id="26" parent="14" name="rowid">
+      <Position>5</Position>
+      <DataType>int8|-5s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>unique_rowid()</DefaultExpression>
+    </column>
+    <index id="27" parent="14" name="primary">
+      <ColNames>rowid</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="28" parent="14" name="primary">
+      <ColNames>rowid</ColNames>
+      <Primary>1</Primary>
+    </key>
   </database-model>
 </dataSource>

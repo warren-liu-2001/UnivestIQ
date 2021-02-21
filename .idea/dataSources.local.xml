@@ -14,6 +14,9 @@
             <node kind="database" qname="@">
               <node kind="schema" qname="@" />
             </node>
+            <node kind="database" qname="mature-otter-855.defaultdb">
+              <node kind="schema" qname="warrenschema" />
+            </node>
             <node kind="database" qname="defaultdb">
               <node kind="schema" qname="public" />
             </node>
