@@ -5,7 +5,6 @@ from datetime import date, datetime
 
 import pandas as pd
 
-import recommender
 from account import Account
 from exceptionse import NotFoundError
 from findata import Security, Transaction

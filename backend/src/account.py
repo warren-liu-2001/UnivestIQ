@@ -78,5 +78,8 @@ class Account:
             listreturn.append(transaction)
         return listreturn
 
+    def setname(self, name):
+        self.name = name
+
 
 
