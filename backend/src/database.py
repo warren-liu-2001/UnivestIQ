@@ -1,4 +1,4 @@
-connectionstring = "postgres://uofthax8hack@free-tier.gcp-us-central1.cockroachlabs.cloud:26257/defaultdb?sslmode=verify-full&sslrootcert=<your_certs_directory>/cc-ca.crt&options=--cluster=mature-otter-855"
+connectionstring = "postgres://uofthax8hack@free-tier.gcp-us-central1.cockroachlabs.cloud:26257/defaultdb?sslmode=verify-full&sslrootcert=<src/cc-ca.crt&options=--cluster=mature-otter-855"
 
 username = "uofthax8hack"
 
@@ -16,12 +16,27 @@ conn = psycopg2.connect(
     database=database_co,
     user='username',
     password=password,
-    sslmode='verify-full',
-    sslrootcert='cc-ca.crt',
+    sslmode='disable',
+    sslrootcert='UnivestIQ/backend/src/cc-ca.crt',
     port=26257,
     host='free-tier.gcp-us-central1.cockroachlabs.cloud',
     options="--cluster=mature-otter-855"
 )
+
+class DBConn:
+
+    conn: psycopg2.connection
+
+    def __init__(self):
+        self.conn = conn
+
+
+
+
+
+
+
+
 
 
 

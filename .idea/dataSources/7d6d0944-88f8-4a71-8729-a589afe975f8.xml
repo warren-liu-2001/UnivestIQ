@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="mature-otter-855.defaultdb@free-tier.gcp-us-central1.cockroachlabs.cloud">
+  <database-model serializer="dbm" dbms="COCKROACH" family-id="COCKROACH" format-version="4.20">
+    <root id="1">
+      <ServerVersion>20.2.4</ServerVersion>
+      <Dbms>COCKROACH</Dbms>
+    </root>
+    <database id="2" parent="1" name="defaultdb"/>
+    <database id="3" parent="1" name="postgres"/>
+    <database id="4" parent="1" name="system"/>
+    <database id="5" parent="1" name="mature-otter-855.defaultdb">
+      <Current>1</Current>
+    </database>
+    <schema id="6" parent="5" name="crdb_internal"/>
+    <schema id="7" parent="5" name="information_schema"/>
+    <schema id="8" parent="5" name="pg_catalog"/>
+    <schema id="9" parent="5" name="pg_extension"/>
+    <schema id="10" parent="5" name="public">
+      <Current>1</Current>
+    </schema>
+  </database-model>
+</dataSource>

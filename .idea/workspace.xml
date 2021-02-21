@@ -57,17 +57,11 @@
       <workItem from="1613853772195" duration="664000" />
       <workItem from="1613856389046" duration="79000" />
       <workItem from="1613861310867" duration="1194000" />
-      <workItem from="1613864427609" duration="1444000" />
+      <workItem from="1613864427609" duration="4910000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="496" y="270" key="com.intellij.ide.util.TipDialog" timestamp="1613852131195">
-      <screen x="0" y="23" width="1440" height="828" />
-    </state>
-    <state x="496" y="270" key="com.intellij.ide.util.TipDialog/0.23.1440.828@0.23.1440.828" timestamp="1613852131195" />
   </component>
 </project>
