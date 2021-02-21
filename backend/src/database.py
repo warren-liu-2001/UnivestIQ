@@ -46,7 +46,7 @@ class DBConn:
                         (email, userid))
         self.conn.commit()
 
-    def export_user_data(self) -> Account:
+    def export_user_data(self) -> List[Account]:
         with conn.cursor() as cur:
             DATA = []
             cur.execute("SELECT * FROM userinfo")
@@ -54,9 +54,11 @@ class DBConn:
             for row in rows:
                 DATA.append(row)
 
-            acc = Account(DATA[0], DATA[2], DATA[3], DATA[1])
-
-            return acc
+            listacc = []
+            for DATUM in DATA:
+                acc = Account(DATUM[0], DATUM[2], DATUM[3], DATUM[1])
+                listacc.append(acc)
+            return listacc
 
 
 

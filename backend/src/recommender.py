@@ -63,8 +63,6 @@ class Recommender:
 
         return df
 
-
-
     def data_process(self, dataframe: Dict) -> pd.DataFrame:
         fdf = {"Food": [], "Entertainment": [], "Utilities": [], "Transport": [], "Health": [], "Other": []}
 
