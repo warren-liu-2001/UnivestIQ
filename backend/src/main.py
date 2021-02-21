@@ -13,7 +13,7 @@ def main():
         for todo_item in resp.json():
             print('{} {}'.format(todo_item['id'], todo_item['summary']))
 
-            
+
 if __name__ == "__main__":
     main()
 
