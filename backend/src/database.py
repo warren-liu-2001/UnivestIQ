@@ -6,7 +6,22 @@ host = "free-tier.gcp-us-central1.cockroachlabs.cloud"
 
 port = 26257
 
-database = "mature-otter-855.defaultdb"
+database_co = "mature-otter-855.defaultdb"
+
+password = "UofTHacks2021"
+
+import psycopg2
+
+conn = psycopg2.connect(
+    database=database_co,
+    user='username',
+    password=password,
+    sslmode='verify-full',
+    sslrootcert='cc-ca.crt',
+    port=26257,
+    host='free-tier.gcp-us-central1.cockroachlabs.cloud',
+    options="--cluster=mature-otter-855"
+)
 
 
 
